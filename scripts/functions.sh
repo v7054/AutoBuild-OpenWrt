@@ -99,7 +99,7 @@ sub_name() {
   local ESCAPED_NEW
   ESCAPED_NEW="$(printf '%s\n' "${NEW_TEXT}" | sed -e 's/|/\\|/g')"
   local -a FILES=()
-  mapfile -d '' FILES < <(grep -rIlFZ --include=\*.{po,js,lua} \
+  mapfile -d '' FILES < <(grep -rIlFZ --include=\*.{htm,js,json,lua,po} \
     -- "${SEARCH_TEXT}" package feeds 2>/dev/null)
   if ! (( ${#FILES[@]} )); then
     warning "Not found [${SEARCH_TEXT}]"

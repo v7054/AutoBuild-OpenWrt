@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
-mkdir -p files/etc/openclash/core
-
+ARCH="${1:-arm64}"
 CORE_VERSION="$(curl -fsSL https://raw.githubusercontent.com/vernesong/OpenClash/core/master/core_version | grep '^[0-9].*')"
-CLASH_META_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/meta/clash-linux-${1}.tar.gz"
+CLASH_META_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/meta/clash-linux-${ARCH}.tar.gz"
 GEOIP_URL='https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat'
 GEOSITE_URL='https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat'
+
+mkdir -p files/etc/openclash/core
 
 curl -fsSL "${CLASH_META_URL}" | tar xOz > files/etc/openclash/core/clash_meta
 curl -fsSL "${GEOIP_URL}" > files/etc/openclash/GeoIP.dat

@@ -118,6 +118,7 @@ jobs:
             'armv8')
               "${SCRIPT_PATH}/preset-dnsproxy.sh" arm64
               "${SCRIPT_PATH}/preset-clash-core.sh" arm64
+              "${SCRIPT_PATH}/preset-shellcrash.sh" arm64
               "${SCRIPT_PATH}/preset-terminal-tools.sh" ;;
             # 'mediatek')
             #   "${SCRIPT_PATH}/preset-dnsproxy.sh" arm64 ;;
